@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+      <div class="news_section layout_padding">
+      <div class="container">
+         <h1 class="news_taital">Kontakt</h1>
+         <p class="news_text">Znajdz nas albo skontaktuj się z nami</p>
+         {% for contact in contacts %}
+         <h2><i>{{ contact.nazwa }}</i></h2>
+         <h3>Nr. tel: </h3><h2><i>{{ contact.NrTel }}</i></h2>
+         <h3>E-mail: </h3><h2><i>{{ contact.EMail }}</i></h2>
+         <a href="{{ contact.GitHub }}">GitHub</a>
+         <a href="{{ contact.LinkedIn }}">LinkedIn</a>
+         <a href="{{ contact.Facebook }}">Facebook</a>
+         {% endfor %}
+      </div>
+      </div>
+{% endblock %}
