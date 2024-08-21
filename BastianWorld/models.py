@@ -18,14 +18,12 @@ class Album(models.Model):
     slug = models.SlugField(max_length=50, unique=True)
     left = models.BooleanField()
     right = models.BooleanField()
-    #def get_absolute_url(self):
-    #    return reverse('album', kwargs={'slug':self.slug})
+
 
     def __unicode__(self):
         return self.title
 
 class AlbumImage(models.Model):
-    # Zaktualizuj import
     from pilkit.processors import ResizeToFill
     photo = ProcessedImageField(upload_to='albums', processors=[ResizeToFill(1280, 1280)], format='JPEG', options={'quality': 70})
     thumb = ProcessedImageField(upload_to='albums', processors=[ResizeToFill(300, 300)], format='JPEG', options={'quality': 80})
