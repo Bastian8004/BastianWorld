@@ -46,7 +46,7 @@ class AlbumModelAdmin(admin.ModelAdmin):
                     img.album = album
                     img.alt = filename
                     filename = '{0}{1}.jpg'.format(album.slug, str(uuid.uuid4())[-13:])
-                    img.image.save(filename, contentfile)
+                    img.photo.save(filename, contentfile)
 
                     filepath = '{0}/albums/{1}'.format(mysite.settings.MEDIA_ROOT, filename)
                     with Image.open(filepath) as i:
