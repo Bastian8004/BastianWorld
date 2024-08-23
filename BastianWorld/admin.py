@@ -58,7 +58,7 @@ class AlbumModelAdmin(admin.ModelAdmin):
             super(AlbumModelAdmin, self).save_model(request, obj, form, change)
 
 
-# In case image should be removed from album.
+
 @admin.register(AlbumImage)
 class AlbumImageModelAdmin(admin.ModelAdmin):
     list_display = ('alt', 'album')
